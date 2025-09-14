@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PhishGuard AI</h1>
+      <p>Offline phishing detection</p>
+    </header>
+    
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="email">Email Analysis</button>
+      <button class="tab-btn" data-tab="file">File Analysis</button>
+    </div>
+    
+    <div class="tab-content" id="email-tab">
+      <textarea id="email-content" placeholder="Paste email content here..."></textarea>
+      <p class="or-divider">- OR -</p>
+      <input type="file" id="email-file" accept=".eml,.txt">
+      <button id="analyze-email-btn">Analyze Email</button>
+    </div>
+    
+    <div class="tab-content hidden" id="file-tab">
+      <input type="file" id="malicious-file">
+      <button id="analyze-file-btn">Analyze File</button>
+    </div>
+    
+    <div id="results" class="hidden">
+      <h3>Analysis Results</h3>
+      <div class="score-display">
+        <div class="score-meter">
+          <div class="meter-fill" id="meter-fill"></div>
+        </div>
+        <div class="score-text" id="score-text">0%</div>
+      </div>
+      <p class="verdict" id="verdict"></p>
+      
+      <div id="features-list" class="features-list"></div>
+      
+      <button id="new-analysis-btn">New Analysis</button>
+    </div>
+    
+    <div id="loading" class="hidden">
+      <p>Analyzing content...</p>
+      <div class="spinner"></div>
+    </div>
+    
+    <div id="error" class="error hidden"></div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

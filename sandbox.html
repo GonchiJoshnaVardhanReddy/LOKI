@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PhishGuard Sandbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .sandbox-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .file-info {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        .analysis-result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .safe {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .suspicious {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        .malicious {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .feature-list {
+            margin-top: 15px;
+        }
+        .feature-item {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: white;
+            border-radius: 3px;
+            border-left: 3px solid #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="sandbox-container">
+        <h2>🔒 PhishGuard File Sandbox Analysis</h2>
+        <div id="file-info" class="file-info">
+            <h3>File Information</h3>
+            <p><strong>Filename:</strong> <span id="filename">Loading...</span></p>
+            <p><strong>File Type:</strong> <span id="filetype">Loading...</span></p>
+            <p><strong>File Size:</strong> <span id="filesize">Loading...</span></p>
+        </div>
+        
+        <div id="analysis-result" class="analysis-result">
+            <h3>Analysis Results</h3>
+            <div id="result-content">Analyzing file...</div>
+        </div>
+        
+        <div id="features-section" class="feature-list" style="display: none;">
+            <h4>Detected Features:</h4>
+            <div id="features-list"></div>
+        </div>
+    </div>
+
+    <script src="sandbox.js"></script>
+</body>
+</html>
